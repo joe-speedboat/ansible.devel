@@ -18,15 +18,15 @@
 - name: find all task
   become: no
   find:
-    paths: "/runner"
+    paths: /runner
     recurse: yes
     depth: 5
     file_type: file
-  register: found_playbooks
+  register: found_playbooks2
   delegate_to: localhost
   run_once: yes
 - debug:
-    var: found_playbooks
+    var: found_playbooks2
 
 #- name: Pause for 5 minutes to build
 #  pause:
