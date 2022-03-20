@@ -21,14 +21,13 @@
     paths: /runner
     recurse: yes
     depth: 5
-    file_type: file
   register: found_playbooks2
   delegate_to: localhost
   run_once: yes
 - debug:
     var: found_playbooks2
 
-#- name: Pause for 5 minutes to build
-#  pause:
-#    minutes: 5
+- name: Pause for 5 minutes to build
+  pause:
+    minutes: 5
 ...
