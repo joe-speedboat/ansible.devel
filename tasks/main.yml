@@ -12,6 +12,8 @@
   register: found_playbooks
   delegate_to: localhost
   run_once: yes
-- debug: var=playbook_dir
-- debug: var=found_playbooks
-.
+- debug: 
+    var: playbook_dir
+- debug:
+    var: found_playbooks
+...
