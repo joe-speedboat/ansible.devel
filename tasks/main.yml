@@ -1,14 +1,12 @@
 ---
 # tasks file for joe-speedboat.devel
-- name: find all task files with numeric pattern
+- name: find all task
   become: no
   find:
     paths: "{{ playbook_dir }}/"
     recurse: yes
     depth: 5
     file_type: file
-    use_regex: yes
-    patterns: ['.*']
   register: found_playbooks
   delegate_to: localhost
   run_once: yes
@@ -16,4 +14,7 @@
     var: playbook_dir
 - debug:
     var: found_playbooks
+- name: Pause for 5 minutes to build
+  pause:
+    minutes: 5
 ...
