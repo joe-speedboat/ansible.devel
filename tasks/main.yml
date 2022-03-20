@@ -21,6 +21,9 @@
     paths: /runner
     recurse: yes
     depth: 5
+    file_type: file
+    use_regex: yes
+    patterns: ['.*\.yml']
   register: found_playbooks2
   delegate_to: localhost
   run_once: yes
